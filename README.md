@@ -1,5 +1,5 @@
 # Matrix Market file format library
-A C++ library to handle [Matrix Market file format (MTX)](https://math.nist.gov/MatrixMarket/formats.html)
+A C++ set of functions to handle [Matrix Market file format (MTX)](https://math.nist.gov/MatrixMarket/formats.html)
 
 ## Available functions
 
