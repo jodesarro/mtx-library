@@ -42,13 +42,13 @@ void mtx_read_to_array( string mtx_path, T * mtx_array )
 }
 
 template<typename T>
-void mtx_write_from_array( string mtx_path, string mtx_comments, int mtx_rows, int mtx_columns, T * mtx_array )
+void mtx_write_from_array( string mtx_path, string mtx_comment, int mtx_rows, int mtx_columns, T * mtx_array )
 {    
     fstream mtx_file;
     mtx_file.open( mtx_path, fstream::out );
 
     mtx_file << "%%MatrixMarket matrix array real general" << endl;
-    mtx_file << mtx_comments << endl;
+    mtx_file << "%" << mtx_comment << endl;
     mtx_file << mtx_rows << " " << mtx_columns << endl;
     
     int mtx_dimension = mtx_rows * mtx_columns;
