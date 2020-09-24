@@ -14,8 +14,8 @@ template<typename T>
 void mtx_read_to_array( string mtx_path, T * mtx_array )
 ```
 
-- Write the values of an array in a *two-dimensional array format MTX* file
+- Write the values of a real array in a *two-dimensional array format MTX* file
 ```
 template<typename T>
-void mtx_write_from_array( string mtx_path, string mtx_comments, int mtx_rows, int mtx_columns, T * mtx_array )
+void mtx_write_from_array( string mtx_path, string mtx_comment, int mtx_rows, int mtx_columns, T * mtx_array )
 ```
