@@ -8,14 +8,20 @@ A C++ set of functions to handle [Matrix Market file format (MTX)](https://math.
 void mtx_get_dimensions( string mtx_path, int &mtx_rows, int &mtx_columns )
 ```
 
-- Read a *two-dimensional array format MTX* and store the values in an array
+- Read a *two-dimensional real array format MTX* and store the values in a real array
 ```
 template<typename T>
 void mtx_read_to_array( string mtx_path, T * mtx_array )
 ```
 
-- Write the values of a real array in a *two-dimensional array format MTX* file
+- Write the values of a real array in a *two-dimensional real array format MTX* file
 ```
 template<typename T>
 void mtx_write_from_array( string mtx_path, string mtx_comment, int mtx_rows, int mtx_columns, T * mtx_array )
+```
+
+- Write the values of a complex array in a *two-dimensional complex array format MTX* file
+```
+template<typename T>
+void mtx_write_from_complex_array( string mtx_path, string mtx_comment, int mtx_rows, int mtx_columns, T * mtx_array )
 ```
