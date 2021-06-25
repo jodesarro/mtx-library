@@ -39,7 +39,7 @@ void mtx_readto_array1d( std::string mtx_path, T * array1d, int imax, int jmax )
 }
 
 template<typename T>
-void mtx_readto_complex_array1d( std::string mtx_path, std::complex<T> * array1d, int imax, int jmax )
+void mtx_readto_complexarray1d( std::string mtx_path, std::complex<T> * array1d, int imax, int jmax )
 {
     std::fstream mtx_file( mtx_path );
 
@@ -83,7 +83,7 @@ void mtx_writefrom_array1d( std::string mtx_path, T * array1d, int imax, int jma
 }
 
 template<typename T>
-void mtx_writefrom_complex_array1d( std::string mtx_path, std::complex<T> * array1d, int imax, int jmax )
+void mtx_writefrom_complexarray1d( std::string mtx_path, std::complex<T> * array1d, int imax, int jmax )
 {    
     std::fstream mtx_file;
     mtx_file.open( mtx_path, std::fstream::out );
