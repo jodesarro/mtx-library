@@ -3,25 +3,29 @@ A C++ set of functions to handle [Matrix Market file format (MTX)](https://math.
 
 ## Available functions
 
-- Get dimensions (the number of rows and columns) of a *two-dimensional array format MTX*
+- Get size (the number of rows and columns) of a *two-dimensional array format MTX* file
 ```
-void mtx_get_dimensions( string mtx_path, int &mtx_rows, int &mtx_columns )
-```
-
-- Read a *two-dimensional array format MTX* and store the values in an array
-```
-template<typename T>
-void mtx_read_to_array( string mtx_path, T * mtx_array )
-
-template<typename T>
-void mtx_read_to_complex_array( string mtx_path, complex<T> * mtx_array )
+void mtx_getsize( std::string mtx_path, int &imax, int &jmax )
 ```
 
-- Write the values of an array in a *two-dimensional array format MTX* file
+- Read a *two-dimensional array format MTX* file and store the values in an one-dimensional array
 ```
 template<typename T>
-void mtx_write_from_array( string mtx_path, string mtx_comment, int mtx_rows, int mtx_columns, T * mtx_array )
+void mtx_readto_array1d( std::string mtx_path, T * array1d, int imax, int jmax )
 
 template<typename T>
-void mtx_write_from_complex_array( string mtx_path, string mtx_comment, int mtx_rows, int mtx_columns, complex<T> * mtx_array )
+void mtx_readto_complex_array1d( std::string mtx_path, std::complex<T> * array1d, int imax, int jmax )
 ```
+
+- Write the values of an one-dimensional array in a *two-dimensional array format MTX* file
+```
+template<typename T>
+void mtx_writefrom_array1d( std::string mtx_path, T * array1d, int imax, int jmax )
+
+template<typename T>
+void mtx_writefrom_complex_array1d( std::string mtx_path, std::complex<T> * array1d, int imax, int jmax )
+```
+
+## Licensing
+
+This project is protected under <a href="https://github.com/jodesarro/mtx-library/blob/master/LICENSE">MIT License</a> and [@jodesarro]( https://github.com/jodesarro ) is the principal author.
