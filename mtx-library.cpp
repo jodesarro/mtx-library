@@ -16,7 +16,7 @@ void mtx_getsize( std::string mtx_path, int &imax, int &jmax )
 }
 
 template<typename T>
-void mtx_readto_array1d( std::string mtx_path, T * array1d, int imax, int jmax )
+void mtx_import( std::string mtx_path, T * data_array, int imax, int jmax )
 {
     std::fstream mtx_file( mtx_path );
 
@@ -32,14 +32,14 @@ void mtx_readto_array1d( std::string mtx_path, T * array1d, int imax, int jmax )
     
     for ( int i=0; i<DIM; i++ )
     {
-        mtx_file >> array1d[i];
+        mtx_file >> data_array[i];
     }
 
     mtx_file.close();
 }
 
 template<typename T>
-void mtx_readto_complexarray1d( std::string mtx_path, std::complex<T> * array1d, int imax, int jmax )
+void mtx_import( std::string mtx_path, std::complex<T> * data_array, int imax, int jmax )
 {
     std::fstream mtx_file( mtx_path );
 
@@ -57,14 +57,14 @@ void mtx_readto_complexarray1d( std::string mtx_path, std::complex<T> * array1d,
     for ( int i=0; i<DIM; i++ )
     {
         mtx_file >> realpart >> imagpart;
-        array1d[i] = std::complex<T> (realpart, imagpart);
+        data_array[i] = std::complex<T> (realpart, imagpart);
     }
 
     mtx_file.close();
 }
 
 template<typename T>
-void mtx_writefrom_array1d( std::string mtx_path, T * array1d, int imax, int jmax )
+void mtx_export( std::string mtx_path, T * data_array, int imax, int jmax )
 {    
     std::fstream mtx_file;
     mtx_file.open( mtx_path, std::fstream::out );
@@ -76,14 +76,14 @@ void mtx_writefrom_array1d( std::string mtx_path, T * array1d, int imax, int jma
 
     for ( int i=0; i<DIM; i++ )
     {
-        mtx_file << "   " << array1d[i] << std::endl;
+        mtx_file << "   " << data_array[i] << std::endl;
     }
 
     mtx_file.close();
 }
 
 template<typename T>
-void mtx_writefrom_complexarray1d( std::string mtx_path, std::complex<T> * array1d, int imax, int jmax )
+void mtx_export( std::string mtx_path, std::complex<T> * data_array, int imax, int jmax )
 {    
     std::fstream mtx_file;
     mtx_file.open( mtx_path, std::fstream::out );
@@ -95,7 +95,7 @@ void mtx_writefrom_complexarray1d( std::string mtx_path, std::complex<T> * array
 
     for ( int i=0; i<DIM; i++ )
     {
-        mtx_file << "   " << real(array1d[i]) << "   " << imag(array1d[i]) << std::endl;
+        mtx_file << "   " << real(data_array[i]) << "   " << imag(data_array[i]) << std::endl;
     }
 
     mtx_file.close();
