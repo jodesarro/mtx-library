@@ -88,7 +88,7 @@ void mtx_export( std::string mtx_path, std::complex<T> * data_array, int imax, i
     std::fstream mtx_file;
     mtx_file.open( mtx_path, std::fstream::out );
 
-    mtx_file << "%%MatrixMarket matrix array std::complex general\n%\n";
+    mtx_file << "%%MatrixMarket matrix array complex general\n%\n";
     mtx_file << imax << " " << jmax << std::endl;
     
     int DIM = imax * jmax;
